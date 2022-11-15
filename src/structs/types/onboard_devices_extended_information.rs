@@ -1,8 +1,9 @@
+use std::prelude::v1::*;
 use super::system_slot::{BusNumber, DeviceFunctionNumber, SegmentGroupNumber};
 use crate::core::{strings::*, UndefinedStruct};
 use crate::{OnBoardDeviceType, SMBiosStruct};
 use serde::{ser::SerializeStruct, Serialize, Serializer};
-use std::fmt;
+use core::fmt;
 
 /// # Onboard Devices Extended Information (Type 41)
 ///

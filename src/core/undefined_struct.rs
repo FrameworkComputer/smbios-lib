@@ -1,13 +1,17 @@
+use std::prelude::v1::*;
 use super::header::{Handle, Header};
 use super::strings::*;
 use crate::structs::{DefinedStruct, SMBiosEndOfTable, SMBiosStruct};
 use serde::{Serialize, Serializer};
-use std::fmt;
+use core::fmt;
 use std::{
     convert::TryInto,
+    slice::Iter,
+};
+#[cfg(feature = "std")]
+use std::{
     fs::File,
     io::{prelude::*, Error, ErrorKind, SeekFrom},
-    slice::Iter,
 };
 /// # Embodies the three basic parts of an SMBIOS structure
 ///
@@ -317,6 +321,7 @@ impl<'a> UndefinedStructTable {
     }
 
     /// Load an [UndefinedStructTable] by seeking and reading the file offsets.
+    #[cfg(feature = "std")]
     pub fn try_load_from_file_offset(
         file: &mut File,
         table_offset: u64,

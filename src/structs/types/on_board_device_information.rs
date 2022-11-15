@@ -1,7 +1,8 @@
+use std::prelude::v1::*;
 use crate::core::{strings::*, Header, UndefinedStruct};
 use crate::SMBiosStruct;
 use serde::{ser::SerializeSeq, ser::SerializeStruct, Serialize, Serializer};
-use std::fmt;
+use core::fmt;
 
 /// # On Board Devices Information (Type 10, Obsolete)
 ///

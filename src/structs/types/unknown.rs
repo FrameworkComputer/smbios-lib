@@ -1,6 +1,7 @@
+use std::prelude::v1::*;
 use crate::{Header, UndefinedStruct};
 use serde::{ser::SerializeStruct, Serialize, Serializer};
-use std::fmt;
+use core::fmt;
 
 /// # OEM or Unknown Structure
 ///

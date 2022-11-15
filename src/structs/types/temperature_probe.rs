@@ -1,7 +1,8 @@
+use std::prelude::v1::*;
 use crate::core::{strings::*, UndefinedStruct};
 use crate::SMBiosStruct;
 use serde::{ser::SerializeStruct, Serialize, Serializer};
-use std::fmt;
+use core::fmt;
 
 /// # Temperature Probe (Type 28)
 ///

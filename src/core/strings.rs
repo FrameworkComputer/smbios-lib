@@ -1,4 +1,7 @@
+use std::prelude::v1::*;
+
 use serde::{ser::SerializeSeq, Serialize, Serializer};
+#[cfg(feature = "std")]
 use std::error;
 use std::{fmt, string::FromUtf8Error};
 
@@ -172,6 +175,7 @@ impl fmt::Display for SMBiosStringError {
     }
 }
 
+#[cfg(feature = "std")]
 impl error::Error for SMBiosStringError {
     fn source(&self) -> Option<&(dyn error::Error + 'static)> {
         match *self {

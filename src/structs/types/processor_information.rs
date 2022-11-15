@@ -1,8 +1,9 @@
+use std::prelude::v1::*;
 use crate::core::{strings::*, Handle, UndefinedStruct};
 use crate::SMBiosStruct;
 use serde::{ser::SerializeStruct, Serialize, Serializer};
 use std::convert::TryInto;
-use std::fmt;
+use core::fmt;
 use std::ops::Deref;
 
 /// # Processor Information (Type 4)

@@ -1,7 +1,8 @@
+use std::prelude::v1::*;
 use crate::core::{Handle, UndefinedStruct};
 use crate::SMBiosStruct;
 use serde::{ser::SerializeStruct, Serialize, Serializer};
-use std::fmt;
+use core::fmt;
 
 /// # Memory Device Mapped Address (Type 20)
 ///

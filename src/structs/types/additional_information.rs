@@ -1,7 +1,8 @@
+use std::prelude::v1::*;
 use crate::core::{strings::*, Handle, UndefinedStruct};
 use crate::structs::SMBiosStruct;
 use serde::{ser::SerializeSeq, ser::SerializeStruct, Serialize, Serializer};
-use std::fmt;
+use core::fmt;
 
 /// # Additional Information Entry contained within [SMBiosAdditionalInformation]
 pub struct AdditionalInformationEntry<'a> {

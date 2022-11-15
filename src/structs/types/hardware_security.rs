@@ -1,6 +1,7 @@
+use std::prelude::v1::*;
 use crate::{SMBiosStruct, UndefinedStruct};
 use serde::{ser::SerializeStruct, Serialize, Serializer};
-use std::fmt;
+use core::fmt;
 
 /// # Hardware Security (Type 24)
 ///

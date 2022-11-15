@@ -1,14 +1,38 @@
+use std::prelude::v1::*;
 use serde::{ser::SerializeStruct, Serialize, Serializer};
 use std::{
     convert::TryFrom,
     convert::TryInto,
     fmt,
+    num::Wrapping,
+};
+#[cfg(feature = "std")]
+use std::{
     fs::{read, File},
     io::{prelude::*, Error, ErrorKind, SeekFrom},
-    num::Wrapping,
-    ops::RangeBounds,
     path::Path,
+    ops::RangeBounds,
 };
+
+#[cfg(not(feature = "std"))]
+pub struct Error {
+    kind: ErrorKind,
+    reason: String
+    //repr: Repr,
+}
+#[cfg(not(feature = "std"))]
+impl Error {
+    pub fn new(kind: ErrorKind, reason: &str) -> Self {
+        Self {
+            kind,
+            reason: reason.to_string(),
+        }
+    }
+}
+#[cfg(not(feature = "std"))]
+pub enum ErrorKind {
+    InvalidData,
+}
 
 /// # SMBIOS 2.1 (32 bit) Entry Point structure
 ///
@@ -233,12 +257,14 @@ impl<'a> SMBiosEntryPoint32 {
     }
 
     /// Load this structure from a file
+    #[cfg(feature = "std")]
     pub fn try_load_from_file(filename: &Path) -> Result<Self, Error> {
         read(filename)?.try_into()
     }
 
     /// Load this structure by scanning a file within the given offsets,
     /// looking for the [SMBiosEntryPoint32::SM_ANCHOR] string.
+    #[cfg(feature = "std")]
     pub fn try_scan_from_file<T: Iterator<Item = u64>>(
         file: &mut File,
         range: T,
@@ -521,12 +547,14 @@ impl<'a> SMBiosEntryPoint64 {
     }
 
     /// Load this structure from a file
+    #[cfg(feature = "std")]
     pub fn try_load_from_file(filename: &Path) -> Result<Self, Error> {
         read(filename)?.try_into()
     }
 
     /// Load this structure by scanning a file within the given offsets,
     /// looking for the [SMBiosEntryPoint64::SM3_ANCHOR] string.
+    #[cfg(feature = "std")]
     pub fn try_scan_from_file<T: Iterator<Item = u64>>(
         file: &mut File,
         range: T,

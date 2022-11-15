@@ -1,9 +1,10 @@
+use std::prelude::v1::*;
 use crate::{
     MemoryErrorGranularityData, MemoryErrorOperationData, MemoryErrorTypeData, SMBiosStruct,
     UndefinedStruct,
 };
 use serde::{ser::SerializeStruct, Serialize, Serializer};
-use std::fmt;
+use core::fmt;
 
 /// # 64-Bit Memory Error Information (Type 33)
 ///

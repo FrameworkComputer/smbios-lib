@@ -1,10 +1,13 @@
+use std::prelude::v1::*;
 use super::header::Handle;
 use super::undefined_struct::{UndefinedStruct, UndefinedStructTable};
 use crate::structs::{DefinedStructTable, SMBiosStruct};
 use serde::{ser::SerializeStruct, Serialize, Serializer};
+#[cfg(feature = "std")]
 use std::io::Error;
-use std::{cmp::Ordering, slice::Iter};
-use std::{fmt, fs::read};
+use core::{cmp::Ordering, slice::Iter, fmt};
+#[cfg(feature = "std")]
+use std::fs::read;
 
 /// # SMBIOS Data
 ///
@@ -36,6 +39,7 @@ impl<'a> SMBiosData {
     }
 
     /// Loads raw SMBios table data from a file
+    #[cfg(feature = "std")]
     pub fn try_load_from_file(
         filename: &str,
         version: Option<SMBiosVersion>,

@@ -1,6 +1,7 @@
 //! [DefinedStruct] and [DefinedStructTable] perform downcast operations
 //! via into() and into_iter() trait functions for [UndefinedStruct].
 
+use std::prelude::v1::*;
 use serde::Serialize;
 use std::iter::FromIterator;
 

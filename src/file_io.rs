@@ -2,6 +2,7 @@
 //!
 //! When testing this library it is useful to read stored
 //! raw data and then load it into the structures.
+use std::prelude::v1::*;
 use crate::core::SMBiosData;
 use crate::windows::WinSMBiosData;
 use std::io::{BufWriter, Error, Write};
