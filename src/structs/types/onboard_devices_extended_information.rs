@@ -1,3 +1,4 @@
+use std::prelude::v1::*;
 use super::system_slot::{BusNumber, DeviceFunctionNumber, SegmentGroupNumber};
 use crate::core::{strings::*, UndefinedStruct};
 use crate::{OnBoardDeviceType, SMBiosStruct};

@@ -1,3 +1,4 @@
+use std::prelude::v1::*;
 use crate::{SMBiosStringSet, SMBiosStruct, UndefinedStruct};
 use serde::{ser::SerializeStruct, Serialize, Serializer};
 use core::fmt;

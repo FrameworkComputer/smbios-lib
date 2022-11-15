@@ -1,3 +1,4 @@
+use std::prelude::v1::*;
 use crate::{
     MemoryErrorGranularityData, MemoryErrorOperationData, MemoryErrorTypeData, SMBiosStruct,
     UndefinedStruct,

@@ -1,3 +1,4 @@
+use std::prelude::v1::*;
 use crate::core::{Handle, UndefinedStruct};
 use crate::SMBiosStruct;
 use serde::{ser::SerializeStruct, Serialize, Serializer};
