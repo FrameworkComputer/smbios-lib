@@ -13,6 +13,9 @@ categories = ["hardware-support"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[features]
+std = ["no-std-compat/std", "serde/std", "dep:getopts"]
+
 [lib]
 name = "smbioslib"
 path = "src/lib.rs"
@@ -22,9 +25,10 @@ name = "smbiosdump"
 path = "src/main.rs"
 
 [dependencies]
-getopts = "0.2.21"
-serde = { version = "1", features = ["derive"] }
+getopts = { version = "0.2.21", optional = true }
+serde = { version = "1", default-features = false, features = ["derive"] }
 serde_json = "1.0"
+no-std-compat = { version = "0.4.1", features = ["alloc"] }
 
 [target.'cfg(windows)'.dependencies]
 libc = "0.2"

@@ -1,7 +1,7 @@
 use crate::core::{Handle, UndefinedStruct};
 use crate::SMBiosStruct;
 use serde::{ser::SerializeStruct, Serialize, Serializer};
-use std::fmt;
+use core::fmt;
 use std::ops::Deref;
 
 /// # Processor Additional Information (Type 44)

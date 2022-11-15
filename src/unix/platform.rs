@@ -1,4 +1,5 @@
 use crate::*;
+use std::prelude::v1::*;
 use std::{io::Error, io::ErrorKind};
 
 #[cfg(any(target_os = "linux"))]

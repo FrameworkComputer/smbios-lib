@@ -1,5 +1,5 @@
 use serde::{ser::SerializeStruct, Serialize, Serializer};
-use std::{convert::TryInto, fmt, ops::Deref, str::FromStr};
+use core::{convert::TryInto, fmt, ops::Deref, str::FromStr};
 
 /// # Structure Handle
 ///

@@ -3,7 +3,7 @@ use crate::{
     UndefinedStruct,
 };
 use serde::{ser::SerializeStruct, Serialize, Serializer};
-use std::fmt;
+use core::fmt;
 
 /// # 64-Bit Memory Error Information (Type 33)
 ///

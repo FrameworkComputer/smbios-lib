@@ -1,6 +1,6 @@
 use crate::{SMBiosStruct, UndefinedStruct};
 use serde::{ser::SerializeStruct, Serialize, Serializer};
-use std::fmt;
+use core::fmt;
 
 // The BIS (Boot Integrity Services) Entry Point structure is not defined in the SMBIOS DMTF document.
 // bisapi037.pdf, section 3.1.3

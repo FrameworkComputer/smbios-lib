@@ -1,7 +1,7 @@
 use crate::core::{strings::*, UndefinedStruct};
 use crate::SMBiosStruct;
 use serde::{ser::SerializeStruct, Serialize, Serializer};
-use std::fmt;
+use core::fmt;
 use std::ops::Deref;
 
 /// # Management Device (Type 34)

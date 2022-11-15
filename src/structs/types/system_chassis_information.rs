@@ -1,7 +1,8 @@
+use std::prelude::v1::*;
 use crate::core::{strings::*, UndefinedStruct};
 use crate::{BoardTypeData, SMBiosStruct, SMBiosType};
 use serde::{ser::SerializeSeq, ser::SerializeStruct, Serialize, Serializer};
-use std::fmt;
+use core::fmt;
 use std::ops::Deref;
 
 /// # System Enclosure or Chassis (Type 3)

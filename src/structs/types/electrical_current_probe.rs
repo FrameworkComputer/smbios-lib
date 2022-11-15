@@ -1,7 +1,7 @@
 use crate::SMBiosStruct;
 use crate::{strings::*, UndefinedStruct};
 use serde::{ser::SerializeStruct, Serialize, Serializer};
-use std::fmt;
+use core::fmt;
 
 /// # Electrical Current Probe (Type 29)
 ///
