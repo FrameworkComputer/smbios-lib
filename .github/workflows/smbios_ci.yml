@@ -2,7 +2,7 @@ name: smbioslib_ci
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, no-std ]
   pull_request:
     branches: [ main ]
     types: [ labeled ]
