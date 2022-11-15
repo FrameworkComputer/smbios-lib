@@ -199,7 +199,6 @@ fn string_keyword(keyword: String, data: &SMBiosData) -> Result<String, BiosPars
     }
 }
 
-#[cfg(feature = "std")]
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let file_option = "f";
     let output_option = "o";
