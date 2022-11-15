@@ -28,16 +28,14 @@ pub use crate::core::*;
 #[cfg(feature = "std")]
 pub use file_io::*;
 
-#[cfg(target_family = "windows")]
+#[cfg(all(target_family = "windows", feature = "std"))]
 pub use windows::{load_windows_smbios_data, raw_smbios_from_device, table_load_from_device};
 
 #[cfg(feature = "std")]
 pub use windows::WinSMBiosData;
 
-#[cfg(feature = "std")]
-//#[cfg(any(target_os = "linux", target_os = "android", target_os = "freebsd"))]
+#[cfg(all(feature = "std", any(target_os = "linux", target_os = "android", target_os = "freebsd")))]
 pub use unix::*;
 
-#[cfg(feature = "std")]
-//#[cfg(any(target_os = "macos", target_os = "ios"))]
+#[cfg(all(feature = "std", any(target_os = "macos", target_os = "ios")))]
 pub use macos::*;
